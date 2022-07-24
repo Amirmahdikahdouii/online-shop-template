@@ -22,14 +22,14 @@ let menuDropDownMenuContainers = [...document.getElementsByClassName('header-meg
 menuDropDownItems.forEach((element, index) => {
     element.addEventListener('mouseenter', () => {
         menuDropDownMenuContainers[index].className = "header-mega-menu-items-container header-account-menu-container-active";
-            [...menuDropDownMenuContainers[index].childNodes].forEach(menuItemLink => {
-                menuItemLink.className = "header-mega-menu-items-container-sidebar-item header-account-menu-item-active"
-            })
+        [...menuDropDownMenuContainers[index].childNodes].forEach(menuItemLink => {
+            menuItemLink.className = "header-mega-menu-items-container-sidebar-item header-account-menu-item-active"
+        })
     })
     element.addEventListener('mouseleave', () => {
         menuDropDownMenuContainers[index].className = "header-mega-menu-items-container";
-            [...menuDropDownMenuContainers[index].childNodes].forEach(menuItemLink => {
-                menuItemLink.className = "header-mega-menu-items-container-sidebar-item"
-            })
+        [...menuDropDownMenuContainers[index].childNodes].forEach(menuItemLink => {
+            menuItemLink.className = "header-mega-menu-items-container-sidebar-item"
+        })
     })
 })

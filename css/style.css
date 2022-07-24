@@ -64,6 +64,13 @@ body {
     color: #F4F4F2;
     font-weight: bold;
     background-color: #BBBFCA;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.header-searchbox-container>span.bi-search:hover {
+    background-color: #F4F4F2;
+    color: rgb(73, 84, 100);
 }
 
 #header-search-input {
@@ -88,6 +95,7 @@ body {
     font-weight: bold;
     font-family: header-logo;
     color: #F4F4F2;
+    cursor: pointer;
     transition: all 300ms;
 }
 
