@@ -41,7 +41,7 @@ let carouselPreviousButton = document.getElementById("change-carousel-items-butt
 let firstActiveItemIndex = 0;
 let lastActiveItemIndex = 2;
 carouselNextButton.addEventListener('click', (e) => {
-    if (lastActiveItemIndex === carouselProductCards.length-1) {
+    if (lastActiveItemIndex === carouselProductCards.length - 1) {
         e.preventDefault();
         return null;
     }
@@ -60,4 +60,40 @@ carouselPreviousButton.addEventListener('click', (e) => {
     lastActiveItemIndex--;
     firstActiveItemIndex--;
     carouselProductCards[firstActiveItemIndex].className = 'carousel-product-card carousel-product-card-active';
+})
+
+// Our Customers Image Slider
+
+let customersImageContainers = [...document.getElementsByClassName('our-customers-slider-image-container')];
+let customersImageActiveIndex = 1;
+customersImageContainers.forEach((container, index) => {
+    container.addEventListener('click', () => {
+        if (index == customersImageActiveIndex) {
+            return null;
+        }
+        container.className = "our-customers-slider-image-container our-customers-slider-image-container-active";
+        customersImageContainers[customersImageActiveIndex].className = "our-customers-slider-image-container";
+        let newActiveItemIndex;
+        let deactiveItemIndex;
+        if (index > customersImageActiveIndex) {
+            deactiveItemIndex = index - 2;
+            newActiveItemIndex = index + 1;
+            if (newActiveItemIndex < customersImageContainers.length) {
+                if (deactiveItemIndex >= 0) {
+                    customersImageContainers[deactiveItemIndex].className = 'our-customers-slider-image-container our-customers-slider-image-container-deactive';
+                }
+                customersImageContainers[newActiveItemIndex].className = 'our-customers-slider-image-container'
+            }
+        } else {
+            deactiveItemIndex = index + 2;
+            newActiveItemIndex = index - 1;
+            if (newActiveItemIndex >= 0) {
+                if (deactiveItemIndex < customersImageContainers.length) {
+                    customersImageContainers[deactiveItemIndex].className = 'our-customers-slider-image-container our-customers-slider-image-container-deactive'
+                }
+                customersImageContainers[newActiveItemIndex].className = 'our-customers-slider-image-container'
+            }
+        }
+        customersImageActiveIndex = index;
+    })
 })

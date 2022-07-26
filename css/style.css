@@ -463,3 +463,53 @@ Drop downs menu animation classes
     text-transform: capitalize;
     cursor: pointer;
 }
+
+.carousel-items-header>.bi-heart-fill {
+    color: #B93160;
+}
+
+.our-customers-slider-images-slider {
+    width: 70%;
+    height: 500px;
+    margin: 1% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.our-customers-slider-image-container {
+    margin: 0 30px;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.our-customers-slider-image-container:hover .our-customers-slider-image {
+    filter: saturate(100%);
+}
+
+.our-customers-slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: saturate(10%);
+    transition: all 500ms;
+}
+
+.our-customers-slider-image-container-active {
+    transition: all 500ms;
+    width: 400px;
+    height: 500px;
+}
+
+.our-customers-slider-image-container-active>.our-customers-slider-image {
+    filter: saturate(100%);
+}
+
+.our-customers-slider-image-container-deactive {
+    display: none;
+}
