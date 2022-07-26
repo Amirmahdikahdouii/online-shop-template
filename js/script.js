@@ -33,3 +33,31 @@ menuDropDownItems.forEach((element, index) => {
         })
     })
 })
+
+// Carousel Script Section
+let carouselProductCards = [...document.getElementsByClassName('carousel-product-card')];
+let carouselNextButton = document.getElementById("change-carousel-items-button-next");
+let carouselPreviousButton = document.getElementById("change-carousel-items-button-previous");
+let firstActiveItemIndex = 0;
+let lastActiveItemIndex = 2;
+carouselNextButton.addEventListener('click', (e) => {
+    if (lastActiveItemIndex === carouselProductCards.length-1) {
+        e.preventDefault();
+        return null;
+    }
+    lastActiveItemIndex++;
+    carouselProductCards[lastActiveItemIndex].className = 'carousel-product-card carousel-product-card-active';
+    carouselProductCards[firstActiveItemIndex].className = 'carousel-product-card';
+    firstActiveItemIndex++;
+})
+
+carouselPreviousButton.addEventListener('click', (e) => {
+    if (firstActiveItemIndex === 0) {
+        e.preventDefault();
+        return null;
+    }
+    carouselProductCards[lastActiveItemIndex].className = 'carousel-product-card';
+    lastActiveItemIndex--;
+    firstActiveItemIndex--;
+    carouselProductCards[firstActiveItemIndex].className = 'carousel-product-card carousel-product-card-active';
+})
