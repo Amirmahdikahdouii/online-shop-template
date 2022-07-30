@@ -97,3 +97,24 @@ customersImageContainers.forEach((container, index) => {
         customersImageActiveIndex = index;
     })
 })
+
+// New Items Container, Item Changes
+let newItemsContainers = [...document.getElementsByClassName("new-item-info-container")];
+let previousNewItemIndex = 0;
+const changeNewItemContainers = () => {
+    newItemsContainers[previousNewItemIndex].className = "center new-item-info-container";
+    previousNewItemIndex++;
+    if (previousNewItemIndex === newItemsContainers.length) {
+        previousNewItemIndex = 0;
+    }
+    newItemsContainers[previousNewItemIndex].className = "center new-item-info-container new-item-info-container-active";
+}
+let automaticChangeNewItemsContainer = setInterval(() => { changeNewItemContainers() }, 3000);
+newItemsContainers.forEach(element => {
+    element.addEventListener("mouseenter", () => {
+        clearInterval(automaticChangeNewItemsContainer);
+    })
+    element.addEventListener("mouseleave", () => {
+        automaticChangeNewItemsContainer = setInterval(() => { changeNewItemContainers() }, 3000);
+    })
+})
