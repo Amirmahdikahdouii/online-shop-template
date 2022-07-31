@@ -118,3 +118,46 @@ newItemsContainers.forEach(element => {
         automaticChangeNewItemsContainer = setInterval(() => { changeNewItemContainers() }, 3000);
     })
 })
+
+// Timer Section Script
+let countToDate = new Date().setHours(new Date().getHours() + 48);
+setInterval(() => {
+    let now = new Date();
+    let timeBetweenDates = Math.floor(countToDate - now);
+    let days = Math.floor(timeBetweenDates / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeBetweenDates % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeBetweenDates % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((timeBetweenDates % (1000 * 60)) / 1000);
+    changeTimerCard(document.querySelector("[seconds-ones-card]"), seconds % 10);
+    changeTimerCard(document.querySelector("[seconds-tens-card]"), Math.floor(seconds / 10));
+    changeTimerCard(document.querySelector("[minutes-ones-card]"), minutes % 10);
+    changeTimerCard(document.querySelector("[minutes-tens-card]"), Math.floor(minutes / 10));
+    changeTimerCard(document.querySelector("[hours-ones-card]"), hours % 10);
+    changeTimerCard(document.querySelector("[hours-tens-card]"), Math.floor(hours / 10));
+    changeTimerCard(document.querySelector("[days-ones-card]"), days % 10);
+    changeTimerCard(document.querySelector("[days-tens-card]"), Math.floor(days / 10));
+}, 250);
+
+const changeTimerCard = (card, newTime) => {
+    let topCard = card.querySelector(".timer-card-top");
+    let previousTime = parseInt(topCard.textContent);
+    if (newTime === previousTime) return null;
+    let bottomCard = card.querySelector(".timer-card-bottom");
+    let topCardFlip = document.createElement("div");
+    topCardFlip.classList.add("timer-card-top-flip");
+    let bottomCardFlip = document.createElement("div");
+    bottomCardFlip.classList.add("timer-card-bottom-flip");
+    topCardFlip.textContent = newTime;
+    bottomCardFlip.textContent = newTime;
+    topCardFlip.addEventListener("animationstart", () => {
+        topCard.textContent = newTime;
+    })
+    topCardFlip.addEventListener("animationend", () => {
+        topCardFlip.remove()
+    })
+    bottomCardFlip.addEventListener("animationend", () => {
+        bottomCard.textContent = newTime;
+        bottomCardFlip.remove();
+    })
+    card.append(topCardFlip, bottomCardFlip);
+}

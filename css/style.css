@@ -20,6 +20,11 @@
     src: url("../fonts/Prompt-Light.ttf");
 }
 
+@font-face {
+    font-family: timer-items;
+    src: url("../fonts/HindSiliguri-Light.ttf");
+}
+
 /*
 color palette:
 #F4F4F2 -> rgb(244, 244, 242) white
@@ -40,13 +45,128 @@ body {
 }
 
 /*
+Timer Section Styles
+*/
+
+.timer-section {
+    border-top: 1px solid #F4F4F2;
+    width: 100%;
+    min-height: 80vh;
+    background-color: #495464;
+    flex-flow: column;
+    justify-content: flex-start;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.timer-section-title {
+    margin: 4% 0;
+    color: #495464;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: timer-items;
+}
+
+.timer-items-container {
+    margin-top: 3%;
+    width: 100%;
+}
+
+.timer-box-container {
+    width: 20%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.timer-box-title {
+    color: #495464;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: timer-items;
+}
+
+.timer-cards-container {
+    margin: 1% 0;
+    display: flex;
+    gap: 10px;
+}
+
+.timer-card-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1px;
+    background-color: #BBBFCA;
+    border-radius: 10px;
+}
+
+.timer-card-top,
+.timer-card-bottom,
+.timer-card-top-flip,
+.timer-card-bottom-flip {
+    width: 100px;
+    height: 75px;
+    line-height: 1;
+    padding: 25px;
+    overflow: hidden;
+    color: #495464;
+    background-color: #F4F4F2;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: timer-items;
+    box-sizing: border-box;
+}
+
+.timer-card-top,
+.timer-card-top-flip {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.timer-card-bottom,
+.timer-card-bottom-flip {
+    display: flex;
+    align-items: flex-end;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.timer-card-top-flip {
+    position: absolute;
+    animation: timer-flip-top-card 250ms ease-out;
+    transform-origin: bottom;
+}
+
+@keyframes timer-flip-top-card {
+    100% {
+        transform: rotateX(90deg);
+    }
+}
+
+.timer-card-bottom-flip {
+    position: absolute;
+    bottom: 0;
+    animation: flip-bottom 250ms ease-out 180ms;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+@keyframes flip-bottom {
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+/*
 New Item Container Styles
 */
 
 .new-item-container {
     margin: 0 0 1%;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,14 +237,46 @@ New Item Container Styles
 }
 
 .new-item-link-button {
+    position: relative;
+    overflow: hidden;
     margin: 1% 0;
     padding: 1% 4%;
     color: #495464;
-    background-color: #E8E8E8;
+    background-color: transparent;
     font-weight: bold;
     font-size: 17px;
     font-family: header-menu-item;
     border-radius: 10px;
+    transition: all 500ms;
+}
+
+.new-item-link-button::before,
+.new-item-link-button::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #495464;
+    border-radius: 10px;
+    transition: all 500ms;
+}
+
+.new-item-link-button::after {
+    width: 100%;
+    z-index: -2;
+    background-color: #E8E8E8;
+    transform: none;
+}
+
+.new-item-link-button:hover::before {
+    width: 100%;
+}
+
+.new-item-link-button:hover {
+    color: #E8E8E8;
 }
 
 /*
