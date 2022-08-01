@@ -212,3 +212,7 @@ Drop downs menu animation classes
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+
+.header-menu-item-title {
+    color: inherit;
+}
