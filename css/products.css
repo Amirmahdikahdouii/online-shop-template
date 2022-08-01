@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: header-logo;
+    src: url("../fonts/LibreFranklin-Light.ttf");
+}
+
+@font-face {
+    font-family: header-menu-item;
+    src: url("../fonts/Manrope-Light.ttf");
+}
+
+@font-face {
+    font-family: product-card-title;
+    src: url("../fonts/Prompt-Light.ttf");
+}
+
+@font-face {
+    font-family: timer-items;
+    src: url("../fonts/HindSiliguri-Light.ttf");
+}
+
+/*
+color palette:
+#F4F4F2 -> rgb(244, 244, 242) white
+#E8E8E8 -> rgb(232, 232, 232) white-gray
+#BBBFCA -> rgb(187, 191, 202) gray
+#495464 -> rgb(73, 84, 100) dark-navy
+*/
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
