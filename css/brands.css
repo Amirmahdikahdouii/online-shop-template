@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: carousel-text;
+    src: url("../fonts/LibreFranklin-Light.ttf");
+}
+
+@font-face {
+    font-family: carousel-title;
+    src: url("../fonts/Manrope-Light.ttf");
+}
+
+@font-face {
+    font-family: tag;
+    src: url("../fonts/Prompt-Light.ttf");
+}
+
+@font-face {
+    font-family: category-name;
+    src: url("../fonts/HindSiliguri-Light.ttf");
+}
+
+/*
+color palette:
+#F4F4F2 -> rgb(244, 244, 242) white
+#E8E8E8 -> rgb(232, 232, 232) white-gray
+#BBBFCA -> rgb(187, 191, 202) gray
+#495464 -> rgb(73, 84, 100) dark-navy
+*/
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brands-slider-container {
+    margin: 1% auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.brands-slider-image {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+
+.products-categories-container {
+    width: 90%;
+    margin: 1% auto;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: space-around;
+}
+
+.products-category-items-container {
+    margin: 2% 0;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(187, 191, 202);
+    border-radius: 10px;
+}
+
+.products-category-image-container {
+    position: relative;
+    padding: 2%;
+    width: 250px;
+    height: 300px;
+    background-color: #e6e9f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-category-tag {
+    padding: 2% 4%;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: tag;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #e6e9f0;
+    background-color: #495464;
+    border-radius: 10px;
+}
+
+.products-category-image {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.products-categories-title {
+    font-weight: bold;
+    font-size: 22px;
+    font-family: category-name;
+    color: #495464;
+}
