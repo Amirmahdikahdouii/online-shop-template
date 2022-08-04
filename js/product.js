@@ -42,3 +42,9 @@ activeChoosenItem(sizeItemActive, "product-size-choose");
 
 // Choose Active Color
 activeChoosenItem(colorItemContainers, 'colors-item-choosen');
+
+// Open Product Gallery Image
+let openProductGalleryImage = document.getElementById("open-product-gallery-image-button");
+openProductGalleryImage.addEventListener("click", () => {
+    // ToDO: complete the event code
+})
