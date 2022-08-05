@@ -64,3 +64,5 @@ openProductGalleryImage.forEach(element => {
 closeProductGalleryImage.addEventListener("click", () => {
     openProductGalleryImageModalContainer.style.display = "none";
 })
+
+//TODO: Make Comment Section
