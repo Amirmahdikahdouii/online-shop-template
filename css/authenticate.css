@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: header-logo;
+    src: url("../fonts/LibreFranklin-Light.ttf");
+}
+
+@font-face {
+    font-family: input;
+    src: url("../fonts/Manrope-Light.ttf");
+}
+
+@font-face {
+    font-family: submit-button;
+    src: url("../fonts/Prompt-Light.ttf");
+}
+
+@font-face {
+    font-family: timer-items;
+    src: url("../fonts/HindSiliguri-Light.ttf");
+}
+
+/*
+color palette:
+#F4F4F2 -> rgb(244, 244, 242) white
+#E8E8E8 -> rgb(232, 232, 232) white-gray
+#BBBFCA -> rgb(187, 191, 202) gray
+#495464 -> rgb(73, 84, 100) dark-navy
+*/
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authentication-box {
+    margin: auto;
+    padding: 2%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #495464;
+}
+
+.authentication-box-header-container {
+    margin: 2% auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.authentication-box-header,
+.authentication-box-home-link,
+.authentication-box-link {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: header-logo;
+    color: #F4F4F2;
+}
+
+.authentication-box-home-link,
+.authentication-box-link {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.authentication-box-link {
+    margin: 1% 0;
+}
+
+.authentication-box-home-link>i {
+    color: #F4F4F2;
+    font-size: 16px;
+}
+
+.form-items-container {
+    width: 90%;
+    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.registre-form-input {
+    margin: 2% auto;
+    width: 80%;
+    padding: 4% 3%;
+    border: none;
+    border-radius: 10px;
+    background-color: #F4F4F2;
+    color: #495464;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: input;
+}
+
+.registre-form-input::placeholder {
+    color: #495464;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: input;
+}
+
+.submit-form-button {
+    position: relative;
+    margin: 2% auto;
+    padding: 4% 8%;
+    width: fit-content;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: submit-button;
+    background-color: transparent;
+    color: #F4F4F2;
+    border: 1px solid #F4F4F2;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 0;
+    transition: all 500ms;
+}
+
+.submit-form-button::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #F4F4F2;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 500ms;
+}
+
+.submit-form-button:hover {
+    color: #495464;
+}
+
+.submit-form-button:hover::before {
+    width: 100%;
+}
