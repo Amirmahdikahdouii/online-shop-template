@@ -44,7 +44,23 @@ activeChoosenItem(sizeItemActive, "product-size-choose");
 activeChoosenItem(colorItemContainers, 'colors-item-choosen');
 
 // Open Product Gallery Image
-let openProductGalleryImage = document.getElementById("open-product-gallery-image-button");
-openProductGalleryImage.addEventListener("click", () => {
-    // ToDO: complete the event code
+let openProductGalleryImage = [...document.getElementsByClassName("product-gallery-image-container")];
+let openProductGalleryImageModalContainer = document.querySelector(".product-gallery-image-modal-section");
+let productModalImage = document.getElementById("product-modal-image");
+let productMainImage = document.querySelector(".product-main-image");
+let closeProductGalleryImage = document.getElementById("close-product-gallery-modal-button");
+openProductGalleryImage.forEach(element => {
+    element.addEventListener("click", event => {
+        openProductGalleryImageModalContainer.style.display = "flex";
+        if (element.children[0].id === "open-product-gallery-image-button") {
+            productModalImage.src = productMainImage.src;
+            event.preventDefault();
+            return null;
+        }
+        productModalImage.src = element.children[0].src;
+    })
+})
+
+closeProductGalleryImage.addEventListener("click", () => {
+    openProductGalleryImageModalContainer.style.display = "none";
 })
