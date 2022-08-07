@@ -93,4 +93,25 @@ carouselPreviousButton.addEventListener('click', (e) => {
     carouselProductCards[firstActiveItemIndex].className = 'carousel-product-card carousel-product-card-active';
 })
 
-//TODO: Make Comment Section
+// Submit Form With Ajax
+let newCommentSubmitButton = document.getElementById("new-comment-submit-form-button");
+newCommentSubmitButton.addEventListener("click", event => {
+    let userNameInput = document.getElementById("new-comment-name-input");
+    let userEmailInput = document.getElementById("new-comment-email-input");
+    let userCommentInput = document.getElementById("new-comment-message-input");
+    let formInformationJSON = {
+        "userName": userNameInput.value,
+        "userEmail": userEmailInput.value,
+        "userComment": userCommentInput.value
+    };
+    formInformationJSON = JSON.stringify(formInformationJSON);
+    let xhttpRequest = new XMLHttpRequest();
+    xhttpRequest.onload = () => {
+        // TODO: Open Carousel For showing Status to user after getting response
+    }
+    // Put Your URL for sending form information into second parameter of open() method
+    xhttpRequest.open("post", "Your-URL");
+    xhttpRequest.send(formInformationJSON);
+})
+
+// TODO: Try Again button event handler

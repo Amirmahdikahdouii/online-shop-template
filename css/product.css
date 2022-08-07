@@ -650,3 +650,172 @@ Related Product Section Style
     text-transform: capitalize;
     cursor: pointer;
 }
+
+.comment-section {
+    width: 65%;
+    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-new-comment-container {
+    margin: 1% auto;
+    padding: 1% 0;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #495464;
+    border: 1px solid #F4F4F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-new-comment-input {
+    padding: 2%;
+    margin: 1% 0;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+}
+
+.add-new-comment-input,
+.add-new-comment-input::placeholder {
+    font-weight: bold;
+    font-size: 17px;
+    font-family: tag;
+    color: #495464;
+}
+
+.add-new-comment-textarea {
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+#new-comment-submit-form-button {
+    margin: 1% 0;
+    padding: 2% 5%;
+    border: 1px solid #F4F4F2;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: product-card-title;
+    color: #F4F4F2;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    transition: all 500ms;
+}
+
+#new-comment-submit-form-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 0;
+    background-color: #F4F4F2;
+    border-radius: 10px;
+    transition: all 500ms;
+    z-index: -1;
+}
+
+#new-comment-submit-form-button:hover {
+    color: #495464;
+    border: 1px solid transparent;
+}
+
+#new-comment-submit-form-button:hover::before {
+    height: 100%;
+}
+
+.comment-message-response-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.succesful-comment-added-container {
+    display: none;
+    position: relative;
+    padding: 2% 0 1%;
+    width: 400px;
+    background-color: #5FD068;
+    border: 1px solid #4B8673;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.unsuccesful-comment-added-container {
+    display: flex;
+    background-color: #B8405E;
+    border: 1px solid #FFF7BC;
+}
+
+.succesful-comment-added-container>i.bi-x {
+    color: #F5DF99;
+    font-size: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.comment-added-status-header {
+    padding-bottom: 5px;
+    width: 95%;
+    font-weight: bold;
+    font-size: 19px;
+    color: #F6FBF4;
+    font-family: product-info;
+    border-bottom: 1px solid #F6FBF4;
+}
+
+.comment-added-message {
+    margin: 1% 0;
+    width: 95%;
+    font-size: 17px;
+    font-weight: normal;
+    font-family: tag;
+    color: #F6FBF4;
+}
+
+.comment-added-message>i {
+    color: #B8405E;
+}
+
+.close-comment-modal-message-button {
+    margin: 1% 15px 1% 0;
+    padding: 10px 20px;
+    color: #EEEEEE;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: product-info;
+    background-color: #B8405E;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    align-self: flex-end;
+}
+
+.message-status-modal-button-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close-comment-modal-message-button-unsuccesful {
+    color: #F6FBF4;
+    background-color: #5FD068;
+}

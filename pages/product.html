@@ -64,7 +64,7 @@
             <a href="#" class="header-menu-item">About Us</a>
         </div>
     </header>
-
+    <!-- Product Intro Section -->
     <section class="product-intro-section">
         <div class="product-info-container">
             <h1 class="product-info-name">T-Shirt Long</h1>
@@ -373,6 +373,35 @@
         <button class="change-carousel-items-button" id="change-carousel-items-button-next">&gt;</button>
     </section>
     <!-- TODO: Make Comment Section and Related Products Carousel -->
+    <section class="comment-section">
+        <div class="comment-message-response-container">
+            <div class="succesful-comment-added-container">
+                <i class="bi bi-x"></i>
+                <h4 class="comment-added-status-header">Your Comment Added!</h4>
+                <span class="comment-added-message">
+                    Your Comment Will Share After Checking By admin
+                    <i class="bi bi-heart-fill"></i>
+                </span>
+                <button class="close-comment-modal-message-button">Close</button>
+            </div>
+            <div class="succesful-comment-added-container unsuccesful-comment-added-container">
+                <i class="bi bi-x"></i>
+                <h4 class="comment-added-status-header">Your Comment Not Added <i class="bi bi-emoji-frown"></i></h4>
+                <span class="comment-added-message">
+                    Please Try Send Again!
+                </span>
+                <button class="close-comment-modal-message-button close-comment-modal-message-button-unsuccesful">Try
+                    Again</button>
+            </div>
+        </div>
+        <form class="add-new-comment-container" action="" method="post">
+            <input class="add-new-comment-input" id="new-comment-name-input" name="name" placeholder="Name" />
+            <input class="add-new-comment-input" id="new-comment-email-input" name="email" placeholder="E-Mail" />
+            <textarea class="add-new-comment-input add-new-comment-textarea" id="new-comment-message-input"
+                name="message" placeholder="Message"></textarea>
+            <button id="new-comment-submit-form-button" type="button">Submit</button>
+        </form>
+    </section>
     <footer class="footer-container">
         <div class="footer-section-container">
             <h4 class="footer-item-title">Contact Us</h4>
