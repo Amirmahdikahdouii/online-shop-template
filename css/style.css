@@ -501,6 +501,10 @@ carousel styles
     cursor: pointer;
 }
 
+/*
+Our Customers Section
+*/
+
 .carousel-items-header>.bi-heart-fill {
     color: #B93160;
 }
