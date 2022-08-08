@@ -354,6 +354,7 @@ body {
 }
 
 .product-gallery-image-container {
+    position: relative;
     width: 120px;
     height: 120px;
     border: 1px solid #495464;
