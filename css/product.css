@@ -854,3 +854,123 @@ Related Product Section Style
     color: #F6FBF4;
     background-color: #5FD068;
 }
+
+.comment-item-container {
+    padding: 1%;
+    width: 88%;
+    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #495464;
+    background-color: rgb(187, 191, 202);
+    border: 1px solid #F4F4F2;
+    border-radius: 10px;
+}
+
+.comment-item-header-container {
+    margin: 1% auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.comment-item-title {
+    max-width: 50%;
+    color: #495464;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: product-name;
+}
+
+.comment-rate-mark-container {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.comment-item-rate-mark {
+    color: #495464;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: tag;
+}
+
+.comment-rate-mark-container>.bi-star-fill {
+    color: gold;
+    font-size: 18px;
+}
+
+.comment-item-user-fullname {
+    margin: .5% 0 1%;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: category-name;
+    color: #495464;
+}
+
+.comment-item-message {
+    margin: 1% auto;
+    width: 100%;
+    color: #495464;
+    font-weight: normal;
+    font-size: 17px;
+    font-family: product-info;
+}
+
+.like-comment-item-contaienr {
+    margin: 1% auto .5%;
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+
+.like-comment-item-title {
+    max-width: 60%;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: product-info;
+    color: #495464;
+}
+
+.like-comment-icons-container {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.like-comment-icon-container {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.like-comment-item-counter {
+    margin: 0 5px;
+    color: #495464;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: tag;
+}
+
+
+.like-comment-icon-container>.bi-hand-thumbs-up-fill,
+.like-comment-icon-container>.bi-hand-thumbs-down-fill,
+.like-comment-icon-container>.bi-hand-thumbs-up,
+.like-comment-icon-container>.bi-hand-thumbs-down {
+    font-size: 20px;
+    color: #495464;
+    cursor: pointer;
+}
+
+.like-comment-icon-container>.bi-hand-thumbs-up-fill,
+.like-comment-icon-container>.bi-hand-thumbs-down-fill {
+    display: none;
+}

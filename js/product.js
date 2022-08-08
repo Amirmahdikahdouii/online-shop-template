@@ -102,10 +102,12 @@ newCommentSubmitButton.addEventListener("click", event => {
     spinLoader.style.display = "block";
     responseContainer.style.display = "flex";
     // get Form Value and Input Nodes
+    let userTitleInput = document.getElementById("new-comment-title-input");
     let userNameInput = document.getElementById("new-comment-name-input");
     let userEmailInput = document.getElementById("new-comment-email-input");
     let userCommentInput = document.getElementById("new-comment-message-input");
     let formInformationJSON = {
+        "userTitleComment": userTitleInput.value,
         "userName": userNameInput.value,
         "userEmail": userEmailInput.value,
         "userComment": userCommentInput.value
@@ -149,4 +151,35 @@ newCommentSubmitButton.addEventListener("click", event => {
     // Put Your URL for sending form information into second parameter of open() method
     xhttpRequest.open("post", "Your-URL");
     xhttpRequest.send(formInformationJSON);
+})
+
+// Like Or Dislike Comment
+let likeCommentButtons = document.querySelectorAll(".like-comment-icon-container>.bi-hand-thumbs-up");
+let likeCommentButtonsFill = document.querySelectorAll(".like-comment-icon-container>.bi-hand-thumbs-up-fill");
+let disLikeCommentButtons = document.querySelectorAll(".like-comment-icon-container>.bi-hand-thumbs-down");
+let disLikeCommentButtonsFill = document.querySelectorAll(".like-comment-icon-container>.bi-hand-thumbs-down-fill");
+const likeDisLikeButtonHandler = (element, button) => {
+    element.style.display = "none";
+    button.style.display = "block";
+}
+likeCommentButtons.forEach((element, index) => {
+    element.addEventListener("click", () => {
+        likeDisLikeButtonHandler(element, likeCommentButtonsFill[index]);
+        disLikeCommentButtons[index].style.display = "block";
+        disLikeCommentButtonsFill[index].style.display = "none";
+    })
+})
+likeCommentButtonsFill.forEach((element, index) => {
+    element.addEventListener("click", () => { likeDisLikeButtonHandler(element, likeCommentButtons[index]) })
+})
+disLikeCommentButtons.forEach((element, index) => {
+    element.addEventListener("click", () => {
+        likeDisLikeButtonHandler(element, disLikeCommentButtonsFill[index]);
+        likeCommentButtons[index].style.display = "block";
+        likeCommentButtonsFill[index].style.display = "none";
+    })
+})
+
+disLikeCommentButtonsFill.forEach((element, index) => {
+    element.addEventListener("click", () => { likeDisLikeButtonHandler(element, disLikeCommentButtons[index]) })
 })
