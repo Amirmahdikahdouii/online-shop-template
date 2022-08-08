@@ -114,3 +114,40 @@ body {
     font-family: category-name;
     color: #495464;
 }
+
+.brand-intro-container {
+    width: 78%;
+    padding: 1%;
+    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #495464;
+}
+
+.brand-intro-title {
+    padding-bottom: 3px;
+    width: 85%;
+    margin: 1% auto;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: category-name;
+    color: #495464;
+    border-bottom: 1px solid #495464;
+}
+
+.brand-intro-container>.brand-intro-title {
+    width: 100%;
+    padding-bottom: 5px;
+    color: #BBBFCA;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.brand-intro-text {
+    width: 100%;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: tag;
+    color: #f4f4f4;
+
+}
