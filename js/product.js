@@ -115,7 +115,9 @@ newCommentSubmitButton.addEventListener("click", event => {
     const requestOnloadHandler = () => {
         let responseMessageContainer;
         let closeModalContainerIcon;
-        if (true) {
+        // xhttpRequest.status === 200 replace to the condition for usage!
+        let randomNumber = Math.floor(Math.random() * 10);
+        if (randomNumber >= 5) {
             spinLoader.style.display = "none";
             responseMessageContainer = document.querySelector(".succesful-comment-added-container");
             responseMessageContainer.style.display = "flex";
@@ -130,7 +132,8 @@ newCommentSubmitButton.addEventListener("click", event => {
             trySendAgainButton.addEventListener("click", () => {
                 responseMessageContainer.style.display = "none";
                 spinLoader.style.display = 'block';
-                requestOnloadHandler();
+                // Replace this timeOut with  requestOnloadHandler();
+                setTimeout(() => { requestOnloadHandler() }, 2000);
             })
         }
         let closeModalContainerButton = document.querySelector(".close-comment-modal-message-button");
