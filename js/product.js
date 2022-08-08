@@ -96,6 +96,12 @@ carouselPreviousButton.addEventListener('click', (e) => {
 // Submit Form With Ajax
 let newCommentSubmitButton = document.getElementById("new-comment-submit-form-button");
 newCommentSubmitButton.addEventListener("click", event => {
+    // Loading Response Container
+    let responseContainer = document.querySelector(".comment-message-response-container");
+    let spinLoader = document.querySelector('.loading-circle-span');
+    spinLoader.style.display = "block";
+    responseContainer.style.display = "flex";
+    // get Form Value and Input Nodes
     let userNameInput = document.getElementById("new-comment-name-input");
     let userEmailInput = document.getElementById("new-comment-email-input");
     let userCommentInput = document.getElementById("new-comment-message-input");
@@ -106,12 +112,38 @@ newCommentSubmitButton.addEventListener("click", event => {
     };
     formInformationJSON = JSON.stringify(formInformationJSON);
     let xhttpRequest = new XMLHttpRequest();
-    xhttpRequest.onload = () => {
-        // TODO: Open Carousel For showing Status to user after getting response
+    const requestOnloadHandler = () => {
+        let responseMessageContainer;
+        let closeModalContainerIcon;
+        if (true) {
+            spinLoader.style.display = "none";
+            responseMessageContainer = document.querySelector(".succesful-comment-added-container");
+            responseMessageContainer.style.display = "flex";
+            closeModalContainerIcon = document.querySelector(".succesful-comment-added-container>i.bi-x");
+        }
+        else {
+            spinLoader.style.display = "none";
+            responseMessageContainer = document.querySelector(".unsuccesful-comment-added-container");
+            responseMessageContainer.style.display = "flex";
+            closeModalContainerIcon = document.querySelector(".unsuccesful-comment-added-container>i.bi-x");
+            let trySendAgainButton = document.getElementById("try-Again-send-comment-button");
+            trySendAgainButton.addEventListener("click", () => {
+                responseMessageContainer.style.display = "none";
+                spinLoader.style.display = 'block';
+                requestOnloadHandler();
+            })
+        }
+        let closeModalContainerButton = document.querySelector(".close-comment-modal-message-button");
+        const closeModalContainer = () => {
+            responseMessageContainer.style.display = "none";
+            responseContainer.style.display = "none";
+        }
+        closeModalContainerIcon.addEventListener("click", closeModalContainer);
+        closeModalContainerButton.addEventListener("click", closeModalContainer);
     }
+    setTimeout(() => { requestOnloadHandler() }, 2000);
+    xhttpRequest.onload = requestOnloadHandler;
     // Put Your URL for sending form information into second parameter of open() method
     xhttpRequest.open("post", "Your-URL");
     xhttpRequest.send(formInformationJSON);
 })
-
-// TODO: Try Again button event handler
