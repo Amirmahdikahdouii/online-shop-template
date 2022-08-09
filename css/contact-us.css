@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: header-title;
+    src: url("../fonts/LibreFranklin-Light.ttf");
+}
+
+@font-face {
+    font-family: form-placeholder;
+    src: url("../fonts/Manrope-Light.ttf");
+}
+
+@font-face {
+    font-family: alert-box-title;
+    src: url("../fonts/Prompt-Light.ttf");
+}
+
+@font-face {
+    font-family: timer-items;
+    src: url("../fonts/HindSiliguri-Light.ttf");
+}
+
+/*
+color palette:
+#F4F4F2 -> rgb(244, 244, 242) white
+#E8E8E8 -> rgb(232, 232, 232) white-gray
+#BBBFCA -> rgb(187, 191, 202) gray
+#495464 -> rgb(73, 84, 100) dark-navy
+*/
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    padding: 1%;
+    display: flex;
+    margin: 1% auto;
+    width: 60%;
+    min-height: 500px;
+    background-color: #f4f4f2;
+    border: 1px solid #495464;
+    border-radius: 10px;
+}
+
+.main-container-section {
+    width: 50%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container-header-title {
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: header-title;
+    color: #495464;
+    border-bottom: 1px solid #495464;
+}
+
+.contact-us-form-container {
+    margin: 1% 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us-form-input {
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    margin: 1.5% auto;
+    padding: 3% 2%;
+    background-color: #BBBFCA;
+}
+
+.contact-us-form-input,
+.contact-us-form-input::placeholder {
+    font-size: 17px;
+    font-weight: bold;
+    font-family: form-placeholder;
+    color: #495464;
+}
+
+.contact-us-form-input:focus,
+.contact-us-form-input:focus.contact-us-form-input::placeholder {
+    color: #f4f4f2;
+    background-color: #495464;
+}
+
+.contact-us-form-text-area {
+    min-width: 90%;
+    max-width: 90%;
+    min-height: 110px;
+    max-height: 150px;
+}
+
+#contact-us-form-submit-button {
+    padding: 17px 35px;
+    margin: 1% auto;
+    border: none;
+    border-radius: 10px;
+    color: #f4f4f2;
+    background-color: #495464;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: form-placeholder;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.main-container-image {
+    width: 90%;
+    margin: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.alert-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-container-loading {
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 30px solid #BBBFCA;
+    border-top: 30px solid #495464;
+    animation: alertBoxLoadingSpin 5s linear infinite;
+}
+
+@keyframes alertBoxLoadingSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(3600deg);
+    }
+}
+
+.alert-box-container {
+    display: none;
+    position: relative;
+    padding: 1%;
+    min-width: 400px;
+    max-width: 600px;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #f4f4f2;
+    opacity: 0;
+    animation: showAlertBox 1s forwards 1;
+}
+
+@keyframes showAlertBox {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#alert-box-close-icon {
+    font-size: 17px;
+    font-weight: bold;
+    color: #495464;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.alert-box-title {
+    margin: 2% 0;
+    width: 100%;
+    border-bottom: 1px solid #495464;
+    color: #495464;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: alert-box-title;
+}
+
+.alert-box-text {
+    margin: 1% auto;
+    width: 95%;
+    font-weight: normal;
+    font-size: 17px;
+    font-family: alert-box-title;
+    color: #495464;
+}
+
+.alert-box-button {
+    margin: 1% 15px;
+    padding: 2% 5%;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: alert-box-title;
+    color: #f4f4f2;
+    background-color: #495464;
+    border: 1px solid #BBBFCA;
+    border-radius: 10px;
+    align-self: flex-end;
+    cursor: pointer;
+}
